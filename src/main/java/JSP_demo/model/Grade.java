@@ -3,6 +3,7 @@ package JSP_demo.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -24,4 +25,13 @@ public class Grade implements IBaseEntity { // ocena z przedmiotu
     private LocalDateTime dateAdded;
 
     private double value;
+
+    @ToString.Exclude
+    @ManyToOne()
+    private Student student;
+
+    public Grade(GradeSubject subject, double value) {
+        this.subject = subject;
+        this.value = value;
+    }
 }

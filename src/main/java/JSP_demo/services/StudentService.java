@@ -4,6 +4,7 @@ import JSP_demo.database.EntityDao;
 import JSP_demo.model.Student;
 
 import java.util.List;
+import java.util.Optional;
 
 public class StudentService {
 //    private List<Student> studentList = new ArrayList<>();
@@ -25,6 +26,18 @@ public class StudentService {
     }
 
     public void addStudent(String name, String surname, int age, boolean isAlive) {
-        entityDao.saveOrUpdate(new Student(null, name, surname, age, isAlive));
+        entityDao.saveOrUpdate(new Student(name, surname, age, isAlive));
+    }
+
+    public void removeStudentById(Long studentToRemoveId) {
+        entityDao.delete(Student.class, studentToRemoveId);
+    }
+
+    public Optional<Student> getStudentById(Long studentToEditId) {
+        return entityDao.getById(Student.class, studentToEditId);
+    }
+
+    public void update(Student studentEdited) {
+        entityDao.saveOrUpdate(studentEdited);
     }
 }

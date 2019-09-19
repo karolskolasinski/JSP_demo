@@ -17,7 +17,9 @@ public class GradeService {
         return entityDao.getAll(Grade.class);
     }
 
-    public void addGrade(String subject, int value) {
-        entityDao.saveOrUpdate(new Grade(null, GradeSubject.valueOf(subject), null, value));
+    public void addGrade(Student student, Double value, GradeSubject gradeSubject) {
+        Grade grade = new Grade(gradeSubject, value);
+        grade.setStudent(student);
+        entityDao.saveOrUpdate(grade);
     }
 }

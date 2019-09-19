@@ -2,8 +2,11 @@
 <html>
 <head>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
+<jsp:include page="/navigator.jsp"/>
+
 <h2>Tabliczka mnożenia!</h2>
 <form action="index.jsp" method="post">
     Rozmiar X: <input type="number" min="1" name="wielkosc_x" value="10">
@@ -13,9 +16,6 @@
     <br/>
     <input type="submit" value="mnóż">
 </form>
-
-
-
 
 <table>
     <%
@@ -46,7 +46,6 @@
         }
     %>
 </table>
-
 
 </body>
 </html>

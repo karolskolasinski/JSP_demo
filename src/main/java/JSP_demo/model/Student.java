@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -29,9 +30,28 @@ public class Student implements IBaseEntity {
     private int age; // "not null"
     private boolean alive; // "not null"
 
-//    @EqualsAndHashCode.Exclude
-//    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
-//    private Set<Grade> gradeList;
+    @Formula(value = "(SELECT AVG(g.value) FROM Grade g WHERE g.student_id = id)")
+    private Double average; // nullable - nie ma "not null"
+
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "student", fetch = FetchType.EAGER)
+    private List<Grade> gradeList;
 
     // wewnątrz modelu może istnieć tylko jedna relacja fetch type eager z listą
+
+
+    public Student(String name, String surname, int age, boolean alive) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.alive = alive;
+    }
+
+    public Student(Long id, String name, String surname, int age, boolean alive) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.alive = alive;
+    }
 }
