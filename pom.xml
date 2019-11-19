@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.javagda25</groupId>
-    <artifactId>JSP_demo</artifactId>
+    <artifactId>jsp_student</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>JSP_demo Maven Webapp</name>
+    <name>jsp_student Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -70,7 +70,7 @@
     </dependencies>
 
     <build>
-        <finalName>JSP_demo</finalName>
+        <finalName>jsp_student</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>

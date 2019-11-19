@@ -1,4 +1,4 @@
-<%@ page import="JSP_demo.model.Grade" %>
+<%@ page import="jsp_studnet.model.Grade" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <%--
@@ -13,7 +13,6 @@
 <head>
     <title>Grade List</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
 </head>
 <body>
 <jsp:include page="/navigator.jsp"/>

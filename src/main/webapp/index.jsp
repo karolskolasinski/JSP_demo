@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Multiple</title>
 </head>
 <body>
 <jsp:include page="/navigator.jsp"/>

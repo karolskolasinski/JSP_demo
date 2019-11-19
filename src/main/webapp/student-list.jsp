@@ -1,4 +1,4 @@
-<%@ page import="JSP_demo.model.Student" %>
+<%@ page import="jsp_studnet.model.Student" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: karol
